@@ -2,12 +2,12 @@ package genetics.geometry
 
 object SingleValue {
 
-  def costFunction(number: Double): SingleValue => Double = (guess: SingleValue) {
-    null
+  def costFunction(number: Double): SingleValue => Double = {
+    SingleValue => SingleValue.value - number
   }
 
   def incubator(genes: List[Double]): SingleValue = {
-    null
+    new SingleValue(genes.head)
   }
 
 }

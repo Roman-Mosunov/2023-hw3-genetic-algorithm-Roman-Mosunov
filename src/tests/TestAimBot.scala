@@ -1,6 +1,7 @@
 package tests
 
-import genetics.aimbot.AimBot
+import genetics.GeneticAlgorithm
+import genetics.aimbot.{AimBot, PhysicsVector}
 import org.scalatest.FunSuite
 
 class TestAimBot extends FunSuite {
@@ -13,9 +14,12 @@ class TestAimBot extends FunSuite {
 
 
   test("Genetic Algorithms Hits a Moving target") {
-    // use this to get the number of genes to use.
-    // Do not hardcode a value since the solutions in AutoGrader might not use that value
     AimBot.numberOfDimensions
+    var targetLocation = new PhysicsVector(3, 0, 0)
+    var sourceLocation = new PhysicsVector(5, 0, 0)
+    var targetVelocity: PhysicsVector = new PhysicsVector(5, 10, 0)
+    var computed = GeneticAlgorithm.geneticAlgorithm(AimBot.incubator, AimBot.costFunction(sourceLocation, targetLocation, targetVelocity), 2)
+    println(computed.toString)
   }
 
 }

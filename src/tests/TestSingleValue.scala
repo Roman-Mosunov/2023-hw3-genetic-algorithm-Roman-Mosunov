@@ -14,9 +14,55 @@ class TestSingleValue extends FunSuite {
 
 
   test("Genetic Algorithm Finds a Random Number") {
-    val hiddenNumber = 50.0
-    val computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
+    var hiddenNumber = 50.0
+    var computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
     println(computed.value)
+
+    assert(equalDoubles(hiddenNumber, computed.value))
+    hiddenNumber = 5000.0
+    computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
+    println(computed.value)
+
+    assert(equalDoubles(hiddenNumber, computed.value))
+    hiddenNumber = 2016.0
+    computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
+    println(computed.value)
+
+    assert(equalDoubles(hiddenNumber, computed.value))
+    hiddenNumber = 7830.0
+    computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
+    println(computed.value)
+
+    assert(equalDoubles(hiddenNumber, computed.value))
+    hiddenNumber = 10000.0
+    computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
+    println(computed.value)
+
+    assert(equalDoubles(hiddenNumber, computed.value))
+    hiddenNumber = 9020.25
+    computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
+    println(computed.value)
+
+    assert(equalDoubles(hiddenNumber, computed.value))
+    hiddenNumber = 31026.0
+    computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
+    println(computed.value)
+
+    assert(equalDoubles(hiddenNumber, computed.value))
+    hiddenNumber = 29922.0
+    computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
+    println(computed.value)
+
+    assert(equalDoubles(hiddenNumber, computed.value))
+    hiddenNumber = 5.985
+    computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
+    println(computed.value)
+
+    assert(equalDoubles(hiddenNumber, computed.value))
+    hiddenNumber = 0.001
+    computed = GeneticAlgorithm.geneticAlgorithm(SingleValue.incubator, SingleValue.costFunction(hiddenNumber), 1)
+    println(computed.value)
+
     assert(equalDoubles(hiddenNumber, computed.value))
   }
 
